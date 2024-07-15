@@ -39,6 +39,7 @@ import { User } from "../models/user";
 import AddIcon from "@mui/icons-material/Add";
 import UserForm from "@/components/UserForm/UserForm";
 import PersonIcon from "@mui/icons-material/Person";
+import { logout } from "@/services/authService";
 
 const HomePage: React.FC = () => {
   const { isAuthenticated, loading } = useAuth();
@@ -169,9 +170,7 @@ const HomePage: React.FC = () => {
                   >
                     Editar
                   </MenuItem>
-                  <MenuItem onClick={() => localStorage.removeItem("token")}>
-                    Sair
-                  </MenuItem>
+                  <MenuItem onClick={() => logout()}>Sair</MenuItem>
                 </Menu>
               </Box>
             </Toolbar>
